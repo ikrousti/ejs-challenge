@@ -1,4 +1,4 @@
-# ejs-chanllenge 
+# ejs-challenge 
 A project to fully understand EJS
 
 ## Getting Started
