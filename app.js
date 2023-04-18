@@ -18,12 +18,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get('/posts/:postId', function(req,res){
-  // console.log(req.params.postId);
 const requestedTitle = req.params.postId;
 posts.forEach(function(post){
   const storedTitle= post.title;
   if (_.lowerCase(storedTitle) === _.lowerCase(requestedTitle)) {
-    console.log("Match found!");}
+    res.render('post', {textTitle: post.title, textContent: post.content})}
     else{
       console.log("Match not found!");
     }
