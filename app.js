@@ -17,7 +17,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get('/posts/:postId', function(req,res){
-  console.log(req.params.postId);
+  // console.log(req.params.postId);
+const requestedTitle = req.params.postId;
+posts.forEach(function(post){
+  const storedTitle= post.title;
+  if (storedTitle === requestedTitle) {
+    console.log("Match found!")
+  }
+})
 })
 
 app.get('/', function(req, res){
