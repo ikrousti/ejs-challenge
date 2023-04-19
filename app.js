@@ -23,9 +23,6 @@ posts.forEach(function(post){
   const storedTitle= post.title;
   if (_.lowerCase(storedTitle) === _.lowerCase(requestedTitle)) {
     res.render('post', {textTitle: post.title, textContent: post.content})}
-    else{
-      console.log("Match not found!");
-    }
   })
 })
 
